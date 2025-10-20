@@ -1,0 +1,16 @@
+/**
+ * @file hero-section.css
+ * @author Samuel Beaulac
+ * @date 19/10/2025
+ * @brief Styles pour la section hero
+ */
+
+.hero__section {
+}
+
+.hero__container {
+  max-width: 40rem;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}

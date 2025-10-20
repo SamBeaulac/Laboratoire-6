@@ -1,3 +1,10 @@
+/**
+ * @file footer.css
+ * @author Samuel Beaulac
+ * @date 19/10/2025
+ * @brief Styles pour le pied de page
+ */
+
 .footer__template-areas {
   width: 100%;
   height: 100%;
@@ -11,12 +18,6 @@
 .footer__menu {
   padding-top: 2rem;
   padding-bottom: 1.5rem;
-}
-
-.footer__menu--legal {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .footer__template-area--left {

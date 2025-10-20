@@ -1,0 +1,35 @@
+<!--
+ * @file data-section.ejs
+ * @author Samuel Beaulac
+ * @date 19/10/2025
+ * @brief Partial pour l'affichage des données
+ -->
+
+<section class="database__section">
+  <div class="section color-scheme-1">
+    <div class="database__container">
+      <h2 class="database__title"><%= title %></h2>
+      <table class="db-table">
+        <thead class="db-thead">
+          <tr class="db-tr">
+            <% if (data.length > 0) { %> <%
+            Object.keys(data[0]).forEach(function(key) { %>
+            <th class="db-th"><%= key %></th>
+            <% }); %> <% } %>
+          </tr>
+        </thead>
+        <tbody class="db-tbody">
+          <% data.forEach(function(row) { %>
+          <tr class="db-tr">
+            <% Object.values(row).forEach(function(champ) { %>
+            <td class="db-td">
+              <%= champ !== null && champ !== undefined ? champ : 'NULL' %>
+            </td>
+            <% }); %>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

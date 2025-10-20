@@ -1,3 +1,10 @@
+/**
+ * @file base.css
+ * @author Samuel Beaulac
+ * @date 19/10/2025
+ * @brief Styles de base de l'application
+ */
+
 *,
 *::before,
 *::after {
@@ -9,6 +16,7 @@
 html {
   height: 100%;
   width: 100%;
+  font-family: sans-serif;
 }
 
 body {

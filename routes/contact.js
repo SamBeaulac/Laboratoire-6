@@ -1,3 +1,10 @@
+/**
+ * @file contact.js
+ * @author Samuel Beaulac
+ * @date 19/10/2025
+ * @brief Route pour la page de contact
+ */
+
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
@@ -6,7 +13,6 @@ const router = express.Router();
 const contactFile = path.join(__dirname, '..', 'contact.txt');
 
 router.get('/', function(req, res) {
-    console.log(req.originalUrl, req.url);
     res.render('contact');
 });
 

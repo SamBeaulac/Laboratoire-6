@@ -1,0 +1,58 @@
+<!--
+ * @file delete-section.ejs
+ * @author Samuel Beaulac
+ * @date 19/10/2025
+ * @brief Partial pour la suppression de données
+ -->
+
+<section class="delete-form__section">
+  <div class="section color-scheme-1">
+    <div class="delete-form__container">
+      <form class="delete-form__form" method="POST" action="/delete">
+        <h1 class="h2">Supprimer un pays</h1>
+        <div class="delete-form__form-row">
+          <label for="pays"> Nom du pays à supprimer: </label>
+          <input
+            type="text"
+            id="pays"
+            name="pays"
+            autocomplete="off"
+            class="delete-form__input"
+            required
+          />
+        </div>
+        <input
+          class="btn btn-primary"
+          type="submit"
+          value="Supprimer"
+          id="delete"
+          name="delete"
+        />
+      </form>
+      <div class="database__container">
+        <table class="db-table">
+          <thead class="db-thead">
+            <tr class="db-tr">
+              <% if (data.length > 0) { %> <%
+              Object.keys(data[0]).forEach(function(key) { %>
+              <th class="db-th" data-column="<%= key %>"><%= key %></th>
+              <% }); %> <% } %>
+            </tr>
+          </thead>
+          <tbody class="db-tbody" id="dbTable">
+            <% data.forEach(function(row) { %>
+            <tr class="db-tr">
+              <% var keys = Object.keys(row); %> <%
+              Object.values(row).forEach(function(champ, index) { %>
+              <td class="db-td" data-key="<%= keys[index] %>">
+                <%= champ !== null && champ !== undefined ? champ : 'NULL' %>
+              </td>
+              <% }); %>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

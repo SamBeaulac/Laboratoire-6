@@ -1,0 +1,46 @@
+<!--
+ * @file insert-section.ejs
+ * @author Samuel Beaulac
+ * @date 19/10/2025
+ * @brief Partial pour l'insertion de données
+ -->
+
+<section class="database__section">
+  <div class="section color-scheme-1">
+    <div class="database__container">
+      <h2 class="database__title"><%= title %></h2>
+      <table class="db-table">
+        <thead class="db-thead">
+          <tr class="db-tr">
+            <% if (data.length > 0) { %> <%
+            Object.keys(data[0]).forEach(function(key) { %>
+            <th class="db-th" data-column="<%= key %>"><%= key %></th>
+            <% }); %> <% } %>
+            <th class="db-th--add">
+              <button class="db-th--add-button" type="button">
+                <img class="db-th--add-img" src="/images/Add square.svg" />
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="db-tbody" id="dbTable">
+          <% data.forEach(function(row) { %>
+          <tr class="db-tr">
+            <% var keys = Object.keys(row); %> <%
+            Object.values(row).forEach(function(champ, index) { %>
+            <td class="db-td">
+              <%= champ !== null && champ !== undefined ? champ : 'NULL' %>
+            </td>
+            <% }); %>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <div class="database__save-button-wrapper">
+        <button class="database__save-button btn btn-primary">
+          Appliquer les changements
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

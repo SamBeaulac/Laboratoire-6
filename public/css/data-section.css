@@ -1,0 +1,91 @@
+/**
+ * @file data-section.css
+ * @author Samuel Beaulac
+ * @date 19/10/2025
+ * @brief Styles pour l'affichage des données
+ */
+
+.database__section {
+}
+
+.database__container {
+  max-width: auto;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.database__title {
+  margin: 2rem 0;
+}
+
+.db-table {
+  border-collapse: collapse;
+}
+
+.db-thead {
+}
+
+.db-tbody {
+}
+
+.db-tr {
+}
+
+.db-th {
+  background-color: #f0f0f0;
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+
+.db-th[data-column="id"] {
+  cursor: pointer;
+  user-select: none;
+}
+
+.db-th[data-column="id"].db-th__sorted-asc::after {
+  content: " ▲";
+}
+
+.db-th[data-column="id"].db-th__sorted-desc::after {
+  content: " ▼";
+}
+
+.db-td {
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+
+.db-th--add {
+  padding: 0.5rem;
+}
+
+.db-th--add-button {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.db-th--add-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.database__save-button-wrapper {
+  margin-top: 2rem;
+}
+
+/* Style pour les nouvelles lignes */
+.db-tr--new {
+  background-color: rgba(200, 255, 200, 0.3);
+}
+
+/* Style pour les lignes modifiées */
+.db-tr--changed {
+  background-color: rgba(255, 250, 200, 0.3);
+}
+
+/* rgba(200, 225, 200, 1); */

@@ -1,18 +1,20 @@
 <!--
- * @file about.ejs
+ * @file data.ejs
  * @author Samuel Beaulac
  * @date 19/10/2025
- * @brief Page À propos
+ * @brief Page d'affichage des données
  -->
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <%- include('../partials/head') %>
   </head>
   <body class="page-width">
     <%- include('../partials/header') %>
-    <main class="content-for-layout"><%- include('../partials/about') %></main>
+    <main class="content-for-layout">
+      <%- include('../partials/data-section') %>
+    </main>
     <%- include('../partials/footer') %>
   </body>
 </html>

@@ -1,5 +1,13 @@
+/**
+ * @file app.js
+ * @author Samuel Beaulac
+ * @date 19/10/2025
+ * @brief Application principale Express
+ */
+
 const express = require('express');
 const path = require('path');
+
 const app = express();
 
 const port = 3000;
@@ -17,6 +25,38 @@ const routes = {
     contact : { 
         path : '/contact',
         router : require('./routes/contact')
+    },
+    requete1 : { 
+        path : '/requete1',
+        router : require('./routes/requete1')
+    },
+    requete2 : { 
+        path : '/requete2',
+        router : require('./routes/requete2')
+    },
+    requete3 : { 
+        path : '/requete3',
+        router : require('./routes/requete3')
+    },
+    requete4 : { 
+        path : '/requete4',
+        router : require('./routes/requete4')
+    },
+    requete5 : { 
+        path : '/requete5',
+        router : require('./routes/requete5')
+    },
+    requete6 : { 
+        path : '/requete6',
+        router : require('./routes/requete6')
+    },
+    insert : { 
+        path : '/insert',
+        router : require('./routes/insert')
+    },
+    delete : { 
+        path : '/delete',
+        router : require('./routes/delete')
     }
 }
 
@@ -27,7 +67,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 
-for(const key in routes) {
+for(const key in routes) 
+{
     const obj = routes[key];
     const path = obj.path;
     const route = obj.router;
